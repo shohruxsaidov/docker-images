@@ -15,8 +15,6 @@ services:
     command: -config.file=/etc/loki/local-config.yml
     ports:
       - "3100:3100"
-    volumes:
-      - ./loki-config.yml:/etc/loki/local-config.yml
 
   tempo:
     image: grafana/tempo:2.5.0
