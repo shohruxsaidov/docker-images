@@ -12,18 +12,18 @@ services:
   loki:
     image: grafana/loki:3.1.1
     container_name: loki
-    command: -config.file=/etc/loki/local-config.yaml
+    command: -config.file=/etc/loki/local-config.yml
     ports:
       - "3100:3100"
     volumes:
-      - ./loki-config.yaml:/etc/loki/local-config.yaml
+      - ./loki-config.yml:/etc/loki/local-config.yml
 
   tempo:
     image: grafana/tempo:2.5.0
     container_name: tempo
-    command: ["-config.file=/etc/tempo.yaml"]
+    command: ["-config.file=/etc/tempo.yml"]
     volumes:
-      - ./tempo.yaml:/etc/tempo.yaml
+      - ./tempo.yml:/etc/tempo.yml
     ports:
       - "3200:3200" # Tempo HTTP API
       - "4317:4317" # OTLP gRPC (for traces)
