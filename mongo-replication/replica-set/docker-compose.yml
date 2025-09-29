@@ -6,10 +6,6 @@ services:
       - "10001:27017"
     volumes:
       - mongo1_data:/data/db
-    environment:
-      - MONGO_INITDB_REPLICA_SET_NAME=rs0
-      - MONGO_INITDB_ROOT_USERNAME=admin
-      - MONGO_INITDB_ROOT_PASSWORD=admin123
     command: ["mongod", "--replSet", "rs0", "--bind_ip_all"]
   mongo2:
     image: mongo:8.0
@@ -18,10 +14,6 @@ services:
       - "10002:27017"
     volumes:
       - mongo2_data:/data/db
-    environment:
-      - MONGO_INITDB_REPLICA_SET_NAME=rs0
-      - MONGO_INITDB_ROOT_USERNAME=admin
-      - MONGO_INITDB_ROOT_PASSWORD=admin123
     command: ["mongod", "--replSet", "rs0", "--bind_ip_all"]
   mongo3:
     image: mongo:8.0
@@ -30,10 +22,6 @@ services:
       - "10003:27017"
     volumes:
       - mongo3_data:/data/db
-    environment:
-      - MONGO_INITDB_REPLICA_SET_NAME=rs0
-      - MONGO_INITDB_ROOT_USERNAME=admin
-      - MONGO_INITDB_ROOT_PASSWORD=admin123
     command: ["mongod", "--replSet", "rs0", "--bind_ip_all"]
 
 volumes:
