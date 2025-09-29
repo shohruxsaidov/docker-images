@@ -39,8 +39,3 @@ services:
       - prometheus
       - loki
       - tempo
-
-volumes:
-  prometheus_data:
-  loki_data:
-  tempo_data:
